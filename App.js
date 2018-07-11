@@ -4,10 +4,15 @@ import { createStackNavigator } from 'react-navigation';
 import { RkButton, RkTextInput, RkTheme } from 'react-native-ui-kitten';
 import MapView from 'react-native-maps';
 
+import NewMapScreenComponent from "./src/Components/NewMapScreenComponent.js";
+import JoinMapScreenComponent from "./src/Components/JoinMapScreenComponent.js";
+import HomeScreenComponent from "./src/Components/HomeScreenComponent.js";
+// import MapsScreenComponent from "./src/Components/MapsScreenComponent.js";
+
 // let baseHost = 'http://10.190.41.2:3000'
 let baseHost = 'https://teammaps.herokuapp.com'
 
-class MapsScreen extends React.Component {
+class MapsScreenComponent extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: 'MapsCODE: ' + navigation.state.params.mapCode,
   });
@@ -403,10 +408,10 @@ RkTheme.setType('RkTextInput','success',{
 
 const RootStack = createStackNavigator(
   {
-    Home: HomeScreen,
-    Map: MapsScreen,
-    JoinMap: JoinMapScreen,
-    NewMap: NewMapScreen,
+    Home: HomeScreenComponent,
+    Map: MapsScreenComponent,
+    JoinMap: JoinMapScreenComponent,
+    NewMap: NewMapScreenComponent,
   },
   {
     initialRouteName: 'Home',
